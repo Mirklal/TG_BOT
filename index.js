@@ -1,11 +1,8 @@
 const { Telegraf, Markup } = require('telegraf')
-const { message } = require('telegraf/filters')
+const {message} = require('telegraf/filters')
 const text = require('./data')
 
-
-require('dotenv').config()
-
-const bot = new Telegraf(process.env.BOT_TOKEN)
+const bot = new Telegraf('6842964939:AAGiVMthlOrhRyOaeX9cppBV0FWd1rHD4gQ')
 bot.start((ctx) => ctx.reply(`Привет ${ctx.message.from.first_name ? ctx.message.from.first_name : 'Незнакомец'}!`))
 bot.help((ctx) => ctx.reply(text.commands))
 
